@@ -2,10 +2,18 @@ package com.finances.app.household.model;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "account")
 public class Account {
+
+	@Transient
+	public static final String SEQUENCE_NAME = "account_sequence";
+
+	@Id
+	private String id;
 
 	private String name;
 	private String description;
@@ -18,6 +26,14 @@ public class Account {
 		this.name = name;
 		this.description = description;
 		this.setTransactions(transactions);
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(final String id) {
+		this.id = id;
 	}
 
 	public String getName() {

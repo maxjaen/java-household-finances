@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.finances.app.household.model.Account;
 import com.finances.app.household.repository.AccountRepository;
+import com.finances.app.household.services.SequenceGeneratorService;
 
 @CrossOrigin
 @RestController
@@ -31,6 +32,9 @@ public class AccountController {
 
 	@Autowired
 	private AccountRepository accountRepository;
+
+	@Autowired
+	private SequenceGeneratorService nextSequenceService;
 
 	@RequestMapping(method = GET, value = ACCOUNT_PATH)
 	public ResponseEntity<List<Account>> getAllAccounts() {
@@ -45,6 +49,8 @@ public class AccountController {
 
 	@RequestMapping(method = POST, value = ACCOUNT_PATH)
 	public ResponseEntity<String> createAccount(@RequestBody final Account account) {
+
+		account.setId(Long.toString(this.nextSequenceService.generateSequence("account_sequence")));
 
 		try {
 			this.accountRepository.save(account);

@@ -2,27 +2,24 @@ package com.finances.app.household.model;
 
 import java.util.Date;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "transaction")
 public class Transaction {
 
 	private String description;
 	private String type;
 	private Date processDate;
-	private int ownerd;
+	private int ownerId;
 	private double amount;
 	private boolean regular;
 
 	public Transaction() {
 	}
 
-	public Transaction(final String description, final String type, final Date processDate, final int ownerd,
+	public Transaction(final String description, final String type, final Date processDate, final int ownerId,
 			final double amount, final boolean regular) {
 		this.description = description;
 		this.type = type;
 		this.processDate = processDate;
-		this.ownerd = ownerd;
+		this.ownerId = ownerId;
 		this.amount = amount;
 		this.regular = regular;
 	}
@@ -51,12 +48,12 @@ public class Transaction {
 		this.processDate = processDate;
 	}
 
-	public int getOwnerd() {
-		return this.ownerd;
+	public int getOwnerId() {
+		return this.ownerId;
 	}
 
 	public void setOwnerd(final int ownerd) {
-		this.ownerd = ownerd;
+		this.ownerId = ownerd;
 	}
 
 	public double getAmount() {
