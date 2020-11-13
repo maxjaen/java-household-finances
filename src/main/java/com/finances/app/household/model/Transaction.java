@@ -52,8 +52,8 @@ public class Transaction {
 		return this.ownerId;
 	}
 
-	public void setOwnerd(final int ownerd) {
-		this.ownerId = ownerd;
+	public void setOwnerId(final int ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public double getAmount() {

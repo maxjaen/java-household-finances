@@ -40,7 +40,7 @@ public class AccountController {
 	public ResponseEntity<List<Account>> getAllAccounts() {
 
 		final List<Account> accounts = this.accountRepository.findAll();
-		if (accounts.size() > 0) {
+		if (!accounts.isEmpty()) {
 			return new ResponseEntity<>(accounts, OK);
 		} else {
 			return new ResponseEntity<>(NOT_FOUND);
@@ -50,7 +50,7 @@ public class AccountController {
 	@RequestMapping(method = POST, value = ACCOUNT_PATH)
 	public ResponseEntity<String> createAccount(@RequestBody final Account account) {
 
-		account.setId(Long.toString(this.nextSequenceService.generateSequence("account_sequence")));
+		account.setId(this.retrieveNextId());
 
 		try {
 			this.accountRepository.save(account);
@@ -90,5 +90,9 @@ public class AccountController {
 		accountToSave.setName(newAccount.getName());
 		accountToSave.setDescription(newAccount.getDescription());
 		accountToSave.setTransactions(newAccount.getTransactions());
+	}
+
+	private String retrieveNextId() {
+		return Long.toString(this.nextSequenceService.generateSequence(Account.SEQUENCE_NAME));
 	}
 }

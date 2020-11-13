@@ -1,0 +1,124 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "e0570359-91fa-4e23-96e6-56d85307f8bb",
+			"name": "Account Endpoint",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"0dd9058a-dd06-44e6-b232-3eb0cc416e79",
+				"38c2da34-a355-4684-8583-2fb3773abdc4",
+				"be9d54b1-22df-4fd1-925d-0e57ba9c6ed4",
+				"73e8b867-0e75-43c4-8c17-8288ab3a1b54"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "0dd9058a-dd06-44e6-b232-3eb0cc416e79",
+					"name": "Get Accounts",
+					"url": "http://localhost:8080/account",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e0570359-91fa-4e23-96e6-56d85307f8bb",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "38c2da34-a355-4684-8583-2fb3773abdc4",
+					"name": "Create Account",
+					"url": "http://localhost:8080/account",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e0570359-91fa-4e23-96e6-56d85307f8bb",
+					"rawModeData": "{\n    \"name\": \"name\",\n    \"description\": \"description\",\n    \"transactions\": []\n}",
+					"pathVariables": {}
+				},
+				{
+					"id": "73e8b867-0e75-43c4-8c17-8288ab3a1b54",
+					"name": "Delete Account",
+					"url": "http://localhost:8080/account/29",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e0570359-91fa-4e23-96e6-56d85307f8bb",
+					"pathVariables": {}
+				},
+				{
+					"id": "be9d54b1-22df-4fd1-925d-0e57ba9c6ed4",
+					"name": "Update Account",
+					"url": "http://localhost:8080/account/31",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "e0570359-91fa-4e23-96e6-56d85307f8bb",
+					"rawModeData": "{\n    \"name\": \"name2\",\n    \"description\": \"description2\",\n    \"transactions\": []\n}",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "41c9d775-e1ed-41cb-a309-2189f05897ee",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
